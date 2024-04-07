@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- General Package Properties -->
+	<PropertyGroup>
+		<PackageId>JPEAK_SV_unlockLevelCapTo60</PackageId>
+		<Version>1.0</Version>
+		<Authors>JPEAK</Authors>
+		<Copyright>2024 JPEAK</Copyright>
+		<RepositoryUrl></RepositoryUrl>
+	</PropertyGroup>
+
+	<!-- Build Properties -->
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Debug;Release</Configurations>
+		<AssemblyName>JPEAK_SV_nobattlemusic</AssemblyName>
+		<RootNamespace>JPEAK_SV_nobattlemusic</RootNamespace>
+		<IsMod>true</IsMod>
+		<GenerateMetadata>true</GenerateMetadata>
+		<IsPacked>true</IsPacked>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutDir>bin</OutDir>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="Properties\**" />
+	  <EmbeddedResource Remove="Properties\**" />
+	  <None Remove="Properties\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Aze.Publicise.MSBuild.Task" Version="1.1.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="0Harmony20">
+	    <HintPath>..\..\jpeaglesandkatz\libs\0Harmony20.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Assembly-CSharp">
+	    <HintPath>..\..\jpeaglesandkatz\libs\Assembly-CSharp_public.dll</HintPath>
+	  </Reference>
+	  <Reference Include="BepInEx">
+	    <HintPath>..\..\jpeaglesandkatz\libs\BepInEx.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Net.Http" />
+	  <Reference Include="UnityEngine">
+	    <HintPath>..\..\jpeaglesandkatz\libs\UnityEngine.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.CoreModule">
+	    <HintPath>..\..\jpeaglesandkatz\libs\UnityEngine.CoreModule.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Update="ILRepack.Lib.MSBuild.Task" Version="2.0.25" />
+	</ItemGroup>
+</Project>
